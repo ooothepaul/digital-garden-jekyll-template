@@ -1,11 +1,15 @@
-$color-primary: hsl(0, 0%, 10%);
-$color-text: hsl(0, 0%, 20%);
-$color-subtext: hsl(0, 0%, 30%);
-$color-border: hsl(0, 0%, 85%);
-$color-box-background: mix($color-primary, white, 4%);
-$border-radius: 4px;
+$color-primary: #e7dfc5;
+$color-text: #483e1e;
+$color-subtext: #2275a6;
+$color-border: #7b3f19;
+$color-box-background: #ddc379;
+$border-radius: 8px;
 $font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
   sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  
+html {
+background: $color-primary;
+}  
 
 body {
   box-sizing: content-box;
@@ -50,7 +54,6 @@ blockquote {
   font-size: 0.88em;
   background: $color-box-background;
   border-radius: $border-radius;
-
   p {
     margin: 0;
   }
@@ -64,23 +67,45 @@ hr {
   background: $color-border;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.3;
-  margin-bottom: 0;
-  padding-bottom: 0;
+ h1 {
+    font-size: 2.5em;
+    line-height: calc(1ex / 0.42);
+    margin: calc(1ex / 0.42) 0;
 }
+
+ h2 {
+    font-size: 2em;
+    line-height: calc(1ex / 0.42);
+    margin: calc(1ex / 0.42) 0;
+}
+
+ h3 {
+    font-size: 1.75em;
+    line-height: calc(1ex / 0.38);
+    margin: calc(1ex / 0.38) 0;
+}
+
+ h4 {
+    font-size: 1.5em;
+    line-height: calc(1ex / 0.37);
+    margin: calc(1ex / 0.37) 0;
+}
+
+ p {
+    font-size: 1em;
+    line-height: calc(1ex / 0.32);
+    margin: calc(1ex / 0.32) 0;
+	width: 60ch;
+    max-width: 100%;
+}
+
 
 a {
   transition: background 300ms;
   padding: 0 0.1em;
   text-decoration: none;
   border-bottom: 1px solid $color-border;
-  color: $color-primary;
+  color: $color-subtext;
   &:hover {
     color: black !important;
     background: #fffaf1;
@@ -143,4 +168,16 @@ code {
 .invalid-link-brackets {
   color: #ccc;
   cursor: help;
+}
+
+/* The browser correctly supports hyphenation */
+p[lang="en"] {
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* The browser does NOT correctly support hyphenation */
+p[lang="it"] {
+    text-align: left;
+    hyphens: none;
 }
